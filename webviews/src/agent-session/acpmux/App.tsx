@@ -65,7 +65,8 @@ import { Markdown } from "./conversation/Markdown";
 import { ToolRows, TurnFooter, WorkedFor } from "./conversation/TurnRows";
 import { TurnActionsContext, type TurnActions } from "./conversation/turnActions";
 import { Undo } from "./conversation/icons";
-import { DATE, THINKING, WORKED, WORKING, isFoldedCopy, turnView } from "./conversation/turns";
+import { DATE, PREVIEW, THINKING, WORKED, WORKING, isFoldedCopy, turnView } from "./conversation/turns";
+import { PreviewCard } from "./conversation/PreviewCard";
 import { DateLine } from "./conversation/DateLine";
 import { SearchChats } from "./SearchChats";
 import { ShortcutsContext, readShortcuts, type ShortcutLabels } from "./shortcuts";
@@ -254,6 +255,17 @@ const WorkingRow = memo(
   (a, b) => a.row.id === b.row.id && a.row.version === b.row.version && a.row.durationMs === b.row.durationMs,
 );
 
+/// Asks the host for a browser tab on a turn's local web page; a host without one (the quick
+/// panel) refuses, and the card's address still opens outside the pane.
+const openPreview = (url: string) => void callNative("browser.open", { url }).catch(() => undefined);
+/// A turn's local web page, live (conversation/PreviewCard.tsx).
+const PreviewRow = memo(
+  function PreviewRow({ row }: RowProps) {
+    return row.text ? <PreviewCard url={row.text} onOpen={openPreview} /> : null;
+  },
+  (a, b) => a.row.id === b.row.id && a.row.text === b.row.text,
+);
+
 const SummaryRow = memo(
   function SummaryRow({ row }: RowProps) {
     return <TurnFooter row={row} />;
@@ -412,6 +424,7 @@ const defaultRegistry: NativeRegistry = {
   [DATE]: DateRow,
   [THINKING]: ThinkingRow,
   [WORKING]: WorkingRow,
+  [PREVIEW]: PreviewRow,
   editedFiles: EditedFilesRow,
   turnSummary: SummaryRow,
   notice: NoticeRow,
