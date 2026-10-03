@@ -70,6 +70,7 @@ extension SettingsSchema {
         "sidebar.topBandMaxShare",
         "sidebar.bottomBandMaxShare",
         "sidebar.stickyBandsScroll",
+        "sidebar.showWorkspaceTabs",
         "browser.defaultEngine",
         "browser.newTabPage",
         "browser.showBookmarksBar",

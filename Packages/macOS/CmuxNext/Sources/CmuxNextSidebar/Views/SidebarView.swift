@@ -380,9 +380,11 @@ public final class SidebarView: NSView {
             || lastState?.drawsLines != state.drawsLines || lastState?.preferences != state.preferences
             || lastState?.suppressedApps != state.suppressedApps
         let listChanged = lastState?.sections != state.sections || lastState?.selection != state.selection
-            || lastState?.active != state.active || lastState?.filter != state.filter || chromeChanged
+            || lastState?.active != state.active || lastState?.filter != state.filter
+            || lastState?.preferences.showWorkspaceTabs != state.preferences.showWorkspaceTabs || chromeChanged
         let previous = lastState?.sections
         lastState = state
+        model.showWorkspaceTabs = state.preferences.showWorkspaceTabs
         if listChanged { list.reload(animated: Self.animatesReload(from: previous, to: state.sections)) }
         if chromeChanged || profilesChanged { needsLayout = true }
     }

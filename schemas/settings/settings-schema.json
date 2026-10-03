@@ -3748,6 +3748,47 @@
     },
     {
       "accepts" : [
+        true,
+        false
+      ],
+      "agent_refusal" : null,
+      "agent_settable" : true,
+      "default" : false,
+      "default_label" : null,
+      "group" : {
+        "key" : "settings.group.sidebar",
+        "text" : "Sidebar"
+      },
+      "help" : {
+        "key" : "settings.sidebar.showWorkspaceTabs.help",
+        "text" : "Lists tabs beneath each workspace in the sidebar."
+      },
+      "kept_on_reset_all" : false,
+      "key" : "sidebar.showWorkspaceTabs",
+      "keywords" : [
+        "sidebar",
+        "workspace",
+        "tabs"
+      ],
+      "kind" : "toggle",
+      "path" : [
+        "sidebar",
+        "showWorkspaceTabs"
+      ],
+      "refuses" : [
+        "true",
+        1,
+        null
+      ],
+      "section" : "appearance",
+      "title" : {
+        "key" : "settings.sidebar.showWorkspaceTabs",
+        "text" : "Show Workspace Tabs"
+      },
+      "validation" : "portable"
+    },
+    {
+      "accepts" : [
         "chromium",
         "webkit"
       ],
@@ -5316,7 +5357,7 @@
       "validation" : "portable"
     }
   ],
-  "schema_hash" : "d2bf4d7d3a6561f535b9d50aa5bed4bf6d2b76644b201a8c2c01bcd0955604c3",
+  "schema_hash" : "a659b02b3d651b5372d3a5764a4b7013b65b4af6eecf124f0d7e36c7062adcbf",
   "sections" : [
     {
       "id" : "general",
