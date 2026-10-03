@@ -11,6 +11,7 @@ public import Foundation
 /// client localizes from the same xcstrings files the app uses. Every row
 /// carries values the Swift validator accepts and refuses, so another
 /// validator can prove it agrees.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum SettingsSchemaExport {
     /// Format version of the file; bump on an incompatible change.
     public static let version = 1

@@ -15,6 +15,7 @@ public nonisolated enum RemotePaneEvent: Sendable, Hashable {
 
 /// The pane's single writer. Pure: `reduce` maps a state and an event to
 /// the next state, and the view renders whatever comes out.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemotePaneReducer {
     public static func reduce(_ state: RemotePaneState, _ event: RemotePaneEvent) -> RemotePaneState {
         var next = state

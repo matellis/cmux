@@ -11,6 +11,7 @@ public nonisolated struct ServerHelperTimedOut: Error, Equatable {
 /// resumes the caller. On the deadline it runs `onTimeout` (kill the child,
 /// invalidate the connection) and throws `ServerHelperTimedOut`; the
 /// operation's late result is dropped.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum ServerHelperDeadline {
     public static func run<T: Sendable>(
         limit: Duration,

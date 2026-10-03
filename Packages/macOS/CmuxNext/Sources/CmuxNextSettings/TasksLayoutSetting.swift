@@ -10,6 +10,7 @@ public nonisolated enum TasksLayoutPreference: String, Sendable, Hashable, CaseI
 }
 
 /// `tasks.layout` in cmux.json: "list", "board" or "inbox" (default).
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum TasksLayoutSetting {
     public static let configPath = ["tasks", "layout"]
     public static let fallback: TasksLayoutPreference = .inbox

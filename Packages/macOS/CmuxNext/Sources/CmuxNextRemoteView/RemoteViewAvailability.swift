@@ -6,6 +6,7 @@
 /// Before this turns on outside DEBUG, `remote_view` tabs must move from the
 /// `cmux://remote-view` browser record to the store-native
 /// `remote-view-tabs-v1` kind (plans/cmux-next/remote-desktop.md 7).
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteViewAvailability {
     #if DEBUG
     public static let isAvailable = true

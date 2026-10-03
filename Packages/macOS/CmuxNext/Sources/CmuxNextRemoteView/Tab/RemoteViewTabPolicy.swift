@@ -13,6 +13,7 @@ import Foundation
 /// The names `mock`, `local` and `localhost` are reserved: the transport
 /// connects to a literal 127.0.0.1 for them and never resolves them through
 /// the machine directory or DNS.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteViewTabPolicy {
     /// The loopback host names a phase-1 tab may connect to.
     public static let loopbackNames: Set<String> = ["mock", "local", "localhost"]

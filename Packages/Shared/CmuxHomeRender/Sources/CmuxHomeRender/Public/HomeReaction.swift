@@ -45,6 +45,7 @@ public struct HomeReactionTarget: Hashable, Sendable {
 /// The glyph and the localized name of each tapback. The picker buttons and
 /// the bubble badges draw the same glyphs; the names are the buttons'
 /// accessibility labels.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public enum HomeReactionStyle {
     /// The picker order.
     public static let tapbacks: [Reaction.Tapback] = [.love, .like, .dislike, .laugh, .emphasize, .question]

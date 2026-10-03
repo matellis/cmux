@@ -4,6 +4,7 @@ public import Foundation
 /// pulls out the parameter sets (VPS/SPS/PPS) for the format description,
 /// and rewrites the remaining NAL units with 4-byte big-endian lengths
 /// (the form VideoToolbox decodes).
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteAnnexB {
     public struct Parsed: Sendable, Equatable {
         /// H.264: [SPS, PPS]. HEVC: [VPS, SPS, PPS]. Empty when the access

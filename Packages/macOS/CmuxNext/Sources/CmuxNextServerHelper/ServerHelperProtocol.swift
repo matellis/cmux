@@ -14,6 +14,7 @@ public import Foundation
     func version(reply: @escaping @Sendable (Int) -> Void)
 }
 
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum ServerHelperConstants {
     /// The LaunchDaemon plist in `Contents/Library/LaunchDaemons` of the app.
     public static let plistName = "com.cmux.server.helper.plist"

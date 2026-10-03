@@ -13,6 +13,7 @@ public nonisolated enum DockPlan: Hashable, Sendable {
 }
 
 /// The defaults a dock request uses when it names no edge or width.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum DockDefaults {
     /// A dock's share of the window: the column's width, clamped here.
     public static let widthRange: ClosedRange<Double> = 0.25...0.40

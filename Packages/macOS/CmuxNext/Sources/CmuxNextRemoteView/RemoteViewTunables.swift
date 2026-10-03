@@ -1,6 +1,7 @@
 public import CmuxNextDesign
 
 /// Debug Settings declarations of the remote desktop pane.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteViewTunables {
     public static let section = TunableSection(id: "remoteDesktop", title: "Remote Desktop", symbol: "display", order: 41)
 

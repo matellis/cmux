@@ -39,6 +39,7 @@ public protocol RemoteFramePresenter: AnyObject, Sendable {
     nonisolated var discardedFrames: Int { get }
 }
 
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public enum RemoteFramePresenters {
     /// The presenter for `kind`. B falls back to A where Metal is missing.
     public static func make(_ kind: RemotePresenterKind) -> any RemoteFramePresenter {

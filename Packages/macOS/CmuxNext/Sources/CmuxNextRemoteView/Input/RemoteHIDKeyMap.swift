@@ -4,6 +4,7 @@ import Foundation
 /// usages on the keyboard page (0x07). Key codes name physical positions,
 /// so the table is layout independent: a key sends the usage of the US
 /// key at the same place, and the host applies its own layout (section 7).
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteHIDKeyMap {
     /// HID keyboard/keypad usage page.
     public static let keyboardPage: UInt32 = 0x07

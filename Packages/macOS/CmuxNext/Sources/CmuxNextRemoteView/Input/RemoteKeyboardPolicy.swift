@@ -13,6 +13,7 @@ public nonisolated enum RemoteKeyboardMode: String, Sendable, Hashable, CaseIter
 
 /// The routing and containment rules for one key event. Pure: the capture
 /// view asks it and acts on the answer.
+// lint:allow namespace-type - static namespace retained for the existing public API.
 public nonisolated enum RemoteKeyboardPolicy {
     public enum Route: Sendable, Equatable {
         /// Handle in the viewer (system and cmux shortcuts): never sent.
